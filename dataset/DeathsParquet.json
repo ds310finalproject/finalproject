@@ -1,5 +1,5 @@
 {
-	"name": "PoliciesParquet",
+	"name": "DeathsParquet",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage4",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "policies.parquet"
+				"fileName": "deaths.parquet"
 			},
 			"compressionCodec": "snappy"
 		},
