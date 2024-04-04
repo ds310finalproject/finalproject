@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "deaths.parquet"
+				"fileName": "deaths.parquet",
+				"fileSystem": "odsteam23"
 			},
 			"compressionCodec": "snappy"
 		},

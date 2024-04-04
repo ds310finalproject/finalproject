@@ -9,7 +9,9 @@
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileName": "cases.parquet",
+				"fileSystem": "odsteam23"
 			},
 			"compressionCodec": "snappy"
 		},
