@@ -1,0 +1,21 @@
+{
+	"name": "CosmosParquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "data_cf1e42cf-afc9-4253-8371-3099c0a3e063_7e538003-930a-4903-a4b4-602e48f98c3a.parquet",
+				"fileSystem": "srccosmos"
+			},
+			"compressionCodec": "none"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,12 @@
+{
+	"name": "SqlServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=covid19-sqlserver-wqkd2el5cp742.database.windows.net;initial catalog=covid19;user id=\" sqladmin\"",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBBODRDREMwLUI1QjUtNEE4RC1BRDcwLTFENDkyNjIwOUY0RF9jMTEwNWIxMC1mMDZkLTRiNDEtYTFiYS00ZmI1ODNkYTAxY2EiDQp9"
+		}
+	}
+}

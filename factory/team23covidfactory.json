@@ -1,0 +1,9 @@
+{
+	"name": "team23covidfactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "75cfb943-3d80-4bd7-973a-68025878019f",
+		"tenantId": "d57d32cc-c121-488f-b07b-dfe705680c71"
+	}
+}
