@@ -2240,7 +2240,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/date')]",
+			"name": "[concat(parameters('factoryName'), '/datesParquet')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -2673,7 +2673,7 @@
 						},
 						{
 							"dataset": {
-								"referenceName": "date",
+								"referenceName": "datesParquet",
 								"type": "DatasetReference"
 							},
 							"name": "date"
@@ -2752,7 +2752,7 @@
 				"[concat(variables('factoryId'), '/datasets/AzureSqlCountryParquet')]",
 				"[concat(variables('factoryId'), '/datasets/AzureSqlDateParquet')]",
 				"[concat(variables('factoryId'), '/datasets/countryParquet')]",
-				"[concat(variables('factoryId'), '/datasets/date')]"
+				"[concat(variables('factoryId'), '/datasets/datesParquet')]"
 			]
 		}
 	]
