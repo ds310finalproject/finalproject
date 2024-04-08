@@ -100,9 +100,6 @@
 					"SqlServer1_connectionString": {
 						"value": "[parameters('SqlServer1_connectionString')]"
 					},
-					"AzureDataLakeStorage2_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
-					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
 					},
@@ -111,9 +108,6 @@
 					},
 					"AzureDataLakeStorage4_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage4_properties_typeProperties_url')]"
-					},
-					"AzureDataLakeStorage2_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -133,8 +127,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
 					"SqlServer2_connectionString": {
 						"value": "[parameters('SqlServer2_connectionString')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
 					}
 				}
 			},
