@@ -10,6 +10,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "azurecountry"
+				},
+				{
+					"dataset": {
+						"referenceName": "AzureSqlDateParquet",
+						"type": "DatasetReference"
+					},
+					"name": "azuredate"
 				}
 			],
 			"sinks": [
@@ -19,6 +26,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "country"
+				},
+				{
+					"dataset": {
+						"referenceName": "date",
+						"type": "DatasetReference"
+					},
+					"name": "date"
 				}
 			],
 			"transformations": [],
@@ -33,6 +47,16 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> azurecountry",
+				"source(output(",
+				"          Country as string,",
+				"          CountryCode as string,",
+				"          Latitude as decimal(10,5),",
+				"          Longitude as decimal(10,5)",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> azuredate",
 				"azurecountry sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
@@ -52,7 +76,27 @@
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> country"
+				"     skipDuplicateMapOutputs: true) ~> country",
+				"azuredate sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          ID as integer,",
+				"          Updated as date,",
+				"          Confirmed as integer,",
+				"          Confirmed_Change as integer,",
+				"          Latitude as decimal(10,5),",
+				"          Longitude as decimal(10,5),",
+				"          ISO2 as string,",
+				"          ISO3 as string,",
+				"          Country_Region as string,",
+				"          load_time as timestamp",
+				"     ),",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> date"
 			]
 		}
 	}
