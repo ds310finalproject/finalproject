@@ -1,5 +1,5 @@
 {
-	"name": "date",
+	"name": "datesParquet",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage4",

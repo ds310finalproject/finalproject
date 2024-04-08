@@ -29,7 +29,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "date",
+						"referenceName": "datesParquet",
 						"type": "DatasetReference"
 					},
 					"name": "date"
