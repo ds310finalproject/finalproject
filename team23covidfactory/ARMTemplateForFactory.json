@@ -2715,11 +2715,13 @@
 						"          load_time as timestamp",
 						"     ),",
 						"     format: 'parquet',",
+						"     partitionFileNames:['country.parquet'],",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> country",
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> country",
 						"azuredate sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     input(",
@@ -2735,11 +2737,13 @@
 						"          load_time as timestamp",
 						"     ),",
 						"     format: 'parquet',",
+						"     partitionFileNames:['dates.parquet'],",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
 						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> date"
+						"     skipDuplicateMapOutputs: true,",
+						"     partitionBy('hash', 1)) ~> date"
 					]
 				}
 			},
