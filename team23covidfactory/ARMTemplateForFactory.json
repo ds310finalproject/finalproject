@@ -2253,6 +2253,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": "dates.parquet",
 						"fileSystem": "odsteam23"
 					},
 					"compressionCodec": "snappy"
