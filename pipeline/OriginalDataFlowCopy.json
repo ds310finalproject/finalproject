@@ -1,9 +1,9 @@
 {
-	"name": "dataflow2",
+	"name": "OriginalDataFlowCopy",
 	"properties": {
 		"activities": [
 			{
-				"name": "dataflow2",
+				"name": "OriginalDataCopy",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow2",
+						"referenceName": "OriginalDataCopyDataFlow",
 						"type": "DataFlowReference"
 					},
 					"compute": {

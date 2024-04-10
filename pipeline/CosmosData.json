@@ -91,7 +91,7 @@
 									"path": "$['C1_School closing']"
 								},
 								"sink": {
-									"name": "C1_School_closing",
+									"name": "C1_SchoolClosing",
 									"type": "Double"
 								}
 							},
@@ -109,7 +109,7 @@
 									"path": "$['C2_Workplace closing']"
 								},
 								"sink": {
-									"name": "C2_Workplace_closing",
+									"name": "C2_WorkplaceClosing",
 									"type": "Double"
 								}
 							},
@@ -127,7 +127,7 @@
 									"path": "$['C3_Cancel public events']"
 								},
 								"sink": {
-									"name": "C3_Cancel_public_events",
+									"name": "C3_CancelPublicEvents",
 									"type": "Double"
 								}
 							},
@@ -145,7 +145,7 @@
 									"path": "$['C4_Restrictions on gatherings']"
 								},
 								"sink": {
-									"name": "C4_Restrictions_on_gatherings",
+									"name": "C4_RestrictionsOnGatherings",
 									"type": "Double"
 								}
 							},
@@ -163,7 +163,7 @@
 									"path": "$['C5_Close public transport']"
 								},
 								"sink": {
-									"name": "C5_Close_public_transport",
+									"name": "C5_ClosePublicTransport",
 									"type": "Double"
 								}
 							},
@@ -181,7 +181,7 @@
 									"path": "$['C6_Stay at home requirements']"
 								},
 								"sink": {
-									"name": "C6_Stay_at_home_requirements",
+									"name": "C6_StayAtHomeRequirements",
 									"type": "Double"
 								}
 							},
@@ -199,7 +199,7 @@
 									"path": "$['C7_Restrictions on internal movement']"
 								},
 								"sink": {
-									"name": "C7_Restrictions_on_internal_movement",
+									"name": "C7_RestrictionsOnInternalMovement",
 									"type": "Double"
 								}
 							},
@@ -217,7 +217,7 @@
 									"path": "$['C8_International travel controls']"
 								},
 								"sink": {
-									"name": "C8_International_travel_controls",
+									"name": "C8_InternationalTravelControls",
 									"type": "Double"
 								}
 							},
@@ -226,7 +226,7 @@
 									"path": "$['E1_Income support']"
 								},
 								"sink": {
-									"name": "E1_Income_support",
+									"name": "E1_IncomeSupport",
 									"type": "Double"
 								}
 							},
@@ -244,7 +244,7 @@
 									"path": "$['E2_Debt contract relief']"
 								},
 								"sink": {
-									"name": "E2_Debt_contract_relief",
+									"name": "E2_DebtContractRelief",
 									"type": "Double"
 								}
 							},
@@ -253,7 +253,7 @@
 									"path": "$['E3_Fiscal measures']"
 								},
 								"sink": {
-									"name": "E3_Fiscal_measures",
+									"name": "E3_FiscalMeasures",
 									"type": "Double"
 								}
 							},
@@ -262,7 +262,7 @@
 									"path": "$['E4_International support']"
 								},
 								"sink": {
-									"name": "E4_International_support",
+									"name": "E4_InternationalSupport",
 									"type": "Double"
 								}
 							},
@@ -271,7 +271,7 @@
 									"path": "$['H1_Public information campaigns']"
 								},
 								"sink": {
-									"name": "H1_Public_information_campaigns",
+									"name": "H1_PublicInformation campaigns",
 									"type": "Double"
 								}
 							},
@@ -289,7 +289,7 @@
 									"path": "$['H2_Testing policy']"
 								},
 								"sink": {
-									"name": "H2_Testing_policy",
+									"name": "H2_TestingPolicy",
 									"type": "Double"
 								}
 							},
@@ -298,7 +298,7 @@
 									"path": "$['H3_Contact tracing']"
 								},
 								"sink": {
-									"name": "H3_Contact_tracing",
+									"name": "H3_ContactTracing",
 									"type": "Double"
 								}
 							},
@@ -307,7 +307,7 @@
 									"path": "$['H4_Emergency investment in healthcare']"
 								},
 								"sink": {
-									"name": "H4_Emergency_investment_in_healthcare",
+									"name": "H4_EmergencyInvestment in healthcare",
 									"type": "Double"
 								}
 							},
@@ -316,7 +316,7 @@
 									"path": "$['H5_Investment in vaccines']"
 								},
 								"sink": {
-									"name": "H5_Investment_in_vaccines",
+									"name": "H5_InvestmentInVaccines",
 									"type": "Double"
 								}
 							},
@@ -325,7 +325,7 @@
 									"path": "$['H6_Facial Coverings']"
 								},
 								"sink": {
-									"name": "H6_Facial_Coverings",
+									"name": "H6_FacialCoverings",
 									"type": "Double"
 								}
 							},
@@ -343,7 +343,7 @@
 									"path": "$['H7_Vaccination policy']"
 								},
 								"sink": {
-									"name": "H7_Vaccination_policy",
+									"name": "H7_VaccinationPolicy",
 									"type": "Double"
 								}
 							},
@@ -361,7 +361,7 @@
 									"path": "$['H8_Protection of elderly people']"
 								},
 								"sink": {
-									"name": "H8_Protection_of_elderly_people",
+									"name": "H8_ProtectionOfElderlyPeople",
 									"type": "Double"
 								}
 							},
@@ -471,6 +471,14 @@
 								"sink": {
 									"name": "EconomicSupportIndexForDisplay",
 									"type": "Double"
+								}
+							},
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "id"
 								}
 							}
 						],
