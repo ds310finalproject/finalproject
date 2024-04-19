@@ -60,6 +60,15 @@
 				},
 				{
 					"name": "DeathsSelect"
+				},
+				{
+					"name": "ConcatDateCountryCode1"
+				},
+				{
+					"name": "ConcatDateCountryCode2"
+				},
+				{
+					"name": "ConcatDateCountryCode3"
 				}
 			],
 			"scriptLines": [
@@ -132,7 +141,10 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DeathsSelect",
-				"RecoveriesSelect sink(allowSchemaDrift: true,",
+				"DeathsSelect derive(SID = concat(ISO3, toString(Updated))) ~> ConcatDateCountryCode1",
+				"CasesSelect derive(SID = concat(ISO3, toString(Updated))) ~> ConcatDateCountryCode2",
+				"RecoveriesSelect derive(SID = concat(ISO3, toString(Updated))) ~> ConcatDateCountryCode3",
+				"ConcatDateCountryCode3 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          Country as string,",
@@ -148,7 +160,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> Recoveries",
-				"CasesSelect sink(allowSchemaDrift: true,",
+				"ConcatDateCountryCode2 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          Country as string,",
@@ -164,7 +176,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> Cases",
-				"DeathsSelect sink(allowSchemaDrift: true,",
+				"ConcatDateCountryCode1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
 				"     partitionFileNames:['deaths.parquet'],",
