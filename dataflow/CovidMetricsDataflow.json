@@ -60,6 +60,15 @@
 				},
 				{
 					"name": "DeathsSelect"
+				},
+				{
+					"name": "SIDdeaths"
+				},
+				{
+					"name": "SIDcases"
+				},
+				{
+					"name": "SIDRecoveries"
 				}
 			],
 			"scriptLines": [
@@ -132,7 +141,10 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> DeathsSelect",
-				"RecoveriesSelect sink(allowSchemaDrift: true,",
+				"DeathsSelect derive(SID = concat(ISO3, toString(Updated))) ~> SIDdeaths",
+				"CasesSelect derive(SID = concat(ISO3, toString(Updated))) ~> SIDcases",
+				"RecoveriesSelect derive(SID = concat(ISO3, toString(Updated))) ~> SIDRecoveries",
+				"SIDRecoveries sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          Country as string,",
@@ -148,7 +160,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> Recoveries",
-				"CasesSelect sink(allowSchemaDrift: true,",
+				"SIDcases sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          Country as string,",
@@ -164,7 +176,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> Cases",
-				"DeathsSelect sink(allowSchemaDrift: true,",
+				"SIDdeaths sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
 				"     partitionFileNames:['deaths.parquet'],",
