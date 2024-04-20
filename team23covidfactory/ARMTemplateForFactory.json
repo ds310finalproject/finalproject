@@ -2905,15 +2905,6 @@
 						},
 						{
 							"name": "DeathsSelect"
-						},
-						{
-							"name": "ConcatDateCountryCode1"
-						},
-						{
-							"name": "ConcatDateCountryCode2"
-						},
-						{
-							"name": "ConcatDateCountryCode3"
 						}
 					],
 					"scriptLines": [
@@ -2986,10 +2977,7 @@
 						"     ),",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true) ~> DeathsSelect",
-						"DeathsSelect derive(SID = concat(ISO3, toString(Updated))) ~> ConcatDateCountryCode1",
-						"CasesSelect derive(SID = concat(ISO3, toString(Updated))) ~> ConcatDateCountryCode2",
-						"RecoveriesSelect derive(SID = concat(ISO3, toString(Updated))) ~> ConcatDateCountryCode3",
-						"ConcatDateCountryCode3 sink(allowSchemaDrift: true,",
+						"RecoveriesSelect sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     input(",
 						"          Country as string,",
@@ -3005,7 +2993,7 @@
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
 						"     partitionBy('hash', 1)) ~> Recoveries",
-						"ConcatDateCountryCode2 sink(allowSchemaDrift: true,",
+						"CasesSelect sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     input(",
 						"          Country as string,",
@@ -3021,7 +3009,7 @@
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
 						"     partitionBy('hash', 1)) ~> Cases",
-						"ConcatDateCountryCode1 sink(allowSchemaDrift: true,",
+						"DeathsSelect sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     format: 'parquet',",
 						"     partitionFileNames:['deaths.parquet'],",
@@ -3098,6 +3086,9 @@
 					"transformations": [
 						{
 							"name": "cast1"
+						},
+						{
+							"name": "derivedColumn1"
 						}
 					],
 					"scriptLines": [
@@ -3197,6 +3188,7 @@
 						"          Date as date 'MM/dd/yyyy'",
 						"     ),",
 						"     errors: true) ~> cast1",
+						"cast1 derive(SID = concat(CountryCode,toString(Date))) ~> derivedColumn1",
 						"azurecountry sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     input(",
@@ -3241,7 +3233,7 @@
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
 						"     partitionBy('hash', 1)) ~> date",
-						"cast1 sink(allowSchemaDrift: true,",
+						"derivedColumn1 sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     input(",
 						"          ID as integer,",
