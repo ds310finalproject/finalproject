@@ -52,6 +52,9 @@
 			"transformations": [
 				{
 					"name": "cast1"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -151,6 +154,7 @@
 				"          Date as date 'MM/dd/yyyy'",
 				"     ),",
 				"     errors: true) ~> cast1",
+				"cast1 derive(SID = concat(CountryCode,toString(Date))) ~> derivedColumn1",
 				"azurecountry sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
@@ -195,7 +199,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> date",
-				"cast1 sink(allowSchemaDrift: true,",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          ID as integer,",
